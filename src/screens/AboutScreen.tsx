@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet, SafeAreaView, ScrollView, Alert } from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView, ScrollView, Alert, Pressable, Linking } from 'react-native';
+import Constants from 'expo-constants';
 import { Button } from '../components/Button';
 import { resetApp } from '../storage/storage';
 import { colors, typography, spacing } from '../theme/theme';
@@ -7,6 +8,9 @@ import { colors, typography, spacing } from '../theme/theme';
 interface Props {
   onReset: () => void;
 }
+
+const privacyPolicyUrl =
+  (Constants.expoConfig?.extra?.privacyPolicyUrl as string | undefined) ?? undefined;
 
 export const AboutScreen: React.FC<Props> = ({ onReset }) => {
   const handleReset = () => {
@@ -51,6 +55,11 @@ export const AboutScreen: React.FC<Props> = ({ onReset }) => {
           We collect zero personal data. Your quiz answers and persona are stored only on your
           device. There is no account, no email, no analytics that identify you.
         </Section>
+        {privacyPolicyUrl ? (
+          <Pressable onPress={() => Linking.openURL(privacyPolicyUrl)}>
+            <Text style={styles.link}>View privacy policy</Text>
+          </Pressable>
+        ) : null}
 
         <Section title="Risk reminder">
           All investing involves risk, including the possible loss of your entire investment. Past
@@ -113,5 +122,11 @@ const styles = StyleSheet.create({
     color: colors.fog,
     textAlign: 'center',
     marginTop: spacing.xl,
+  },
+  link: {
+    ...typography.body,
+    color: colors.amber,
+    textDecorationLine: 'underline',
+    marginBottom: spacing.lg,
   },
 });
