@@ -12,8 +12,8 @@
 
 Host `docs/privacy-policy.html` at any public URL. Options:
 
-1. **GitHub Pages:** Push repo to GitHub → Settings → Pages → use URL like  
-   `https://YOUR_USERNAME.github.io/investiq/privacy-policy.html`
+1. **GitHub Pages (recommended):** Repo `Keerthija9/investiq` → **Settings → Pages** → Source: branch **master**, folder **/docs** → Save. After 1–2 minutes, use:  
+   `https://keerthija9.github.io/investiq/privacy-policy.html`
 2. **Google Sites:** Create a free page and paste the policy text.
 3. **Notion:** Publish a page and use the public link.
 
