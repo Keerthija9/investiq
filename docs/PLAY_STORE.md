@@ -106,6 +106,26 @@ Play Console requires screenshots (min. 2 phone screenshots). Capture from Expo 
 
 Optional: **Feature graphic** 1024×500 px.
 
+### Store screenshots (exact 9:16)
+
+**Use only** files under `assets/store-screenshots/` — **not** the raw 1536×1024 images in the Cursor cache.
+
+All exports are **1080×1920** (exact 9:16, both sides ≥ 1080 px, under 8 MB).
+
+| Folder | Files |
+|--------|--------|
+| `phone/` | `01-welcome.png` … `04-home.png` |
+| `tablet-7/` | `01-welcome.png` … `04-home.png` |
+| `tablet-10/` | `01-welcome.png` … `04-home.png` |
+
+Regenerate after editing source art:
+
+```bash
+python scripts/resize-screenshots.py
+```
+
+Play requirements: PNG or JPEG, **16:9 or 9:16 only**, each side 1080–7680 px, max 8 MB each.
+
 Replace placeholder icons in `/assets` before a public marketing launch.
 
 ---
