@@ -12,8 +12,8 @@
 
 Host `docs/privacy-policy.html` at any public URL. Options:
 
-1. **GitHub Pages:** Push repo to GitHub → Settings → Pages → use URL like  
-   `https://YOUR_USERNAME.github.io/investiq/privacy-policy.html`
+1. **GitHub Pages (recommended):** Repo `Keerthija9/investiq` → **Settings → Pages** → Source: branch **master**, folder **/docs** → Save. After 1–2 minutes, use:  
+   `https://keerthija9.github.io/investiq/privacy-policy.html`
 2. **Google Sites:** Create a free page and paste the policy text.
 3. **Notion:** Publish a page and use the public link.
 
@@ -105,6 +105,26 @@ Play Console requires screenshots (min. 2 phone screenshots). Capture from Expo 
 - Result / persona screen
 
 Optional: **Feature graphic** 1024×500 px.
+
+### Store screenshots (exact 9:16)
+
+**Use only** files under `assets/store-screenshots/` — **not** the raw 1536×1024 images in the Cursor cache.
+
+All exports are **1080×1920** (exact 9:16, both sides ≥ 1080 px, under 8 MB).
+
+| Folder | Files |
+|--------|--------|
+| `phone/` | `01-welcome.png` … `04-home.png` |
+| `tablet-7/` | `01-welcome.png` … `04-home.png` |
+| `tablet-10/` | `01-welcome.png` … `04-home.png` |
+
+Regenerate after editing source art:
+
+```bash
+python scripts/resize-screenshots.py
+```
+
+Play requirements: PNG or JPEG, **16:9 or 9:16 only**, each side 1080–7680 px, max 8 MB each.
 
 Replace placeholder icons in `/assets` before a public marketing launch.
 
